@@ -12,4 +12,4 @@ FROM alpine:3.12
 RUN apk add --no-cache bash python3 binutils-dev curl-dev elfutils-libelf
 COPY --from=builder /usr/local/bin/kcov* /usr/local/bin/
 COPY --from=builder /usr/local/share/doc/kcov /usr/local/share/doc/kcov
-CMD ["/usr/local/bin/kcov"]
+ENTRYPOINT ["/usr/local/bin/kcov"]
